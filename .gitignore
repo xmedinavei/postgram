@@ -1,0 +1,37 @@
+db.sqlite3.
+/db/*.sqlite3
+
+.venv/
+
+media/
+
+__pycache__/
+
+# /posts/__pycache__/
+# /posts/migrations/
+migrations/
+
+/static/img/*.jpg
+/static/img/*.JPG
+/static/img/*.png
+/static/img/*.PNG
+
+# /users/__pycache__
+# /users/migrations
+# /users/pictures/*jpg
+# /users/pictures/*JPG
+# /users/pictures/*png
+# /users/pictures/*PNG
+
+pictures/*jpg
+pictures/*JPG
+pictures/*png
+pictures/*PNG
+
+**/*jpg
+**/*JPG
+**/*png
+**/*PNG
+
+users/pictures/
+static/img/
