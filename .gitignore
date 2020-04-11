@@ -35,3 +35,4 @@ pictures/*PNG
 
 users/pictures/
 static/img/
+db.sqlite3

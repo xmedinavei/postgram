@@ -45,7 +45,15 @@ $ python3 -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
 $ python3 manage.py runserver
+
 ```
+
+
+### Do you check how Postgram works?
+
+Follow the link to my youtube video where it is shown: https://youtu.be/zuA-pkU12QM
+
+
 
 
 License
