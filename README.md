@@ -1,10 +1,9 @@
 # Postgram
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
 
 
-Postgram is a personal project, a copy of instagram in order to demostrate Django proefficiency.
+Postgram is a web post project inspired on IG, to show django proficiency. Want to watch how Postgram works? I record a youtube video :) Follow the link ----> https://youtu.be/zuA-pkU12QM
 
 # Programing skills used in the project
 
