@@ -10,16 +10,16 @@ from users.models import Profile
 class SignupForm(forms.Form):
     """Sign up form."""
 
-    username = forms.CharField(min_length=4, max_length=50)
-    password = forms.CharField(max_length=70, widget=forms.PasswordInput())
-    password_confirmation = forms.CharField(max_length=70, widget=forms.PasswordInput())
-    first_name = forms.CharField(min_length=2, max_length=50)
-    last_name = forms.CharField(min_length=2, max_length=50)
+    username = forms.CharField(min_length=4, max_length=50, widget=forms.TextInput(attrs={"class": "form-control"}))
+    password = forms.CharField(max_length=70, widget=forms.PasswordInput(attrs={"class": "form-control"}))
+    password_confirmation = forms.CharField(max_length=70, widget=forms.PasswordInput(attrs={"class": "form-control"}))
+    first_name = forms.CharField(min_length=2, max_length=50, widget=forms.TextInput(attrs={"class": "form-control"}))
+    last_name = forms.CharField(min_length=2, max_length=50, widget=forms.TextInput(attrs={"class": "form-control"}))
 
     email = forms.CharField(
         min_length=6,
         max_length=70,
-        widget=forms.EmailInput()
+        widget=forms.EmailInput(attrs={"class": "form-control"})
     )
 
     def clean_username(self):

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'users',
 
     #Third party apps
-    'storages',
+    'storages'
 ]
 
 
@@ -114,23 +114,9 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
-# STATICFILES_FINDERS = [
-#     'django.contrib.staticfiles.finders.FileSystemFinder',
-#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-# ]
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = '/media/'
-
-#######
-# AWS #
-####################################################################
+##########
+# AWS S3 #
+##########
 USE_S3 = env('USE_S3') == 'TRUE'
 
 if USE_S3:
@@ -173,4 +159,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 LOGIN_URL = '/users/login/'
 LOGIN_REDIRECT_URL = '/' 
-LOGOUT_REDIRECT_URL = LOGIN_URL 
+LOGOUT_REDIRECT_URL = LOGIN_URL
