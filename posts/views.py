@@ -1,6 +1,7 @@
 """Posts views."""
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView, DetailView, ListView
+from django.http import HttpResponseRedirect
+from django.views.generic import CreateView, DetailView, ListView, DeleteView
 from django.urls import reverse_lazy
 
 #Forms
@@ -42,3 +43,32 @@ class CreatePostView(LoginRequiredMixin, CreateView):
         context['user'] = self.request.user
         context['profile'] = self.request.user.profile
         return context
+    
+
+class PostDeleteView(DeleteView):
+    "Delete a post"
+    print("You are about to delete a post, men!")
+    # import pdb; pdb.set_trace()
+    template_name = 'posts/delete.html'
+    model = Post
+    success_url = reverse_lazy('posts:feed')
+
+    def get_queryset(self):
+        queryset = super(PostDeleteView, self).get_queryset()
+        # import pdb; pdb.set_trace()
+        self.queryset = queryset.filter(id=self.kwargs['pk'])
+        return self.queryset
+
+    def get_object(self, queryset=None):
+        return self.get_queryset()
+
+    def post(self, *args, **kwargs):
+        self.items_to_delete = self.request.POST.getlist('itemsToDelete')
+        if self.request.POST.get("confirm_delete"):
+            queryset = self.get_queryset()
+            queryset.delete()
+            return HttpResponseRedirect(self.success_url)
+        elif self.request.POST.get("cancel"):
+            return HttpResponseRedirect(self.success_url)
+        else:
+            return self.get(self, *args, **kwargs)
