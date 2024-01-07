@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'GMT-5'
+TIME_ZONE = 'America/Toronto'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
